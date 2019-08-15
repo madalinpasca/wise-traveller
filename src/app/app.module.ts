@@ -13,7 +13,7 @@ import {UserService} from "./service/UserService";
 import {GroupService} from "./service/group.service";
 import { AddUserComponent } from './user/register-user/register-user.component';
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
-import { AddQuestionnaireComponent } from './questionnaire/add-questionnaire/add-questionnaire.component';
+import {HomePageComponent} from './questionnaire/home-page/home-page.component';
 import { AddQuestionnaireToGroupComponent } from './questionnaire/add-questionnaire-to-group/add-questionnaire-to-group.component';
 import {SocialLoginModule, AuthServiceConfig, GoogleLoginProvider, AuthService} from 'angular5-social-login';
 import {getAuthServiceConfigs} from './socialloginConfig';
@@ -26,7 +26,7 @@ import { PhoneNumberComponent } from './user/phone-number/phone-number.component
     // AddGroupComponent,
     AddUserComponent,
     ForgotPasswordComponent,
-    AddQuestionnaireComponent,
+    HomePageComponent,
     AddQuestionnaireToGroupComponent,
     PhoneNumberComponent,
   ],

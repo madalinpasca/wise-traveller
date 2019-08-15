@@ -3,11 +3,11 @@ import {SubjectArea} from "../../domain/SubjectArea";
 import {Question} from "../../domain/Question";
 
 @Component({
-  selector: 'app-add-questionnaire',
-  templateUrl: './add-questionnaire.component.html',
-  styleUrls: ['./add-questionnaire.component.css']
+  selector: 'home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.css']
 })
-export class AddQuestionnaireComponent implements OnInit {
+export class HomePageComponent implements OnInit {
   title: string;
   selectedSubjectAreaId: number;
   subjectAreas: SubjectArea[];

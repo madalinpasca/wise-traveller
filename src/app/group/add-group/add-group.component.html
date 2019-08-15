@@ -1,0 +1,49 @@
+<mat-card class="login-card">
+  <mat-card-header class="login-header">
+    <mat-card-title>Add group</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Name" [(ngModel)]="name" name="name" required>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Parent group</mat-label>
+              <mat-select [(ngModel)]="parentGroupId" >
+                <mat-option *ngFor="let group of groupsOwnByUser " [value]="group.id">
+                  {{group.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Owner</mat-label>
+              <mat-select  [(ngModel)]="selectedOwnerId" [contentEditable]="!ownGroup" required>
+                <mat-option *ngFor="let user of userFromUserGroups " [value]="user.id">
+                  {{user.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <mat-radio-button [(ngModel)]="ownGroup" class="example-margin" value="true">Assign myself</mat-radio-button>
+      </table>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="addGroup()" color="primary">Add group</button>
+  </mat-card-actions>
+</mat-card>
+

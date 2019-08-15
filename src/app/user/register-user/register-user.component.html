@@ -1,0 +1,62 @@
+<mat-card class="login-card">
+  <mat-card-header class="login-header">
+    <mat-card-title>User registration</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="First name" [(ngModel)]="firstname" name="firstname" required>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Last name" [(ngModel)]="lastname" name="lastname" required>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" [(ngModel)]="password" name="password" type="password" required>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Phone number" [(ngModel)]="phoneNumber" name="phonenumber" type="password" required>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input hidden type="file" #upploader (change)="uploadFile($event)" required/>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card-content>
+    <button mat-raised-button (click)="upploader.click()" color="primary">Upload</button>
+  <mat-card-actions>
+  </mat-card-actions>
+  <mat-card-actions>
+    <button mat-raised-button (click)="addUser()" color="primary">Register</button>
+  </mat-card-actions>
+</mat-card>
+

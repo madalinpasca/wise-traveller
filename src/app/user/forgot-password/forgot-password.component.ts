@@ -6,11 +6,11 @@ import {GroupService} from "../../service/group.service";
 import {MatSnackBar} from "@angular/material";
 
 @Component({
-  selector: 'app-assign-user-to-group',
-  templateUrl: './assign-user-to-group.component.html',
-  styleUrls: ['./assign-user-to-group.component.css']
+  selector: 'forgot-password',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.css']
 })
-export class AssignUserToGroupComponent implements OnInit {
+export class ForgotPasswordComponent implements OnInit {
   selectedUserId: number;
   selectdGroupId: number;
   userFromUserGroups: User[];

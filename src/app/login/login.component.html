@@ -26,7 +26,7 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button (click)="login()" color="primary">Login</button>
-    <button mat-raised-button routerLink="/addUser">
+    <button mat-raised-button routerLink="/addUser" color="primary">
       <span>User registration</span>
     </button>
   </mat-card-actions>
@@ -37,5 +37,9 @@
     <button mat-raised-button class="loginBtn loginBtn--google" (click)="submitLoginG();">
       Login with Google
     </button>
+  </mat-card-actions>
+  <mat-card-actions>
+    <a id="forgotpassword" routerLink="/forgotPassword">Forgot you're password?</a>
+    <a id="phonenumber" routerLink="/phoneNumber">Phone TEST!</a>
   </mat-card-actions>
 </mat-card>

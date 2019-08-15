@@ -12,11 +12,12 @@ import {UserService} from "./service/UserService";
 // import { AddGroupComponent } from './group/add-group/add-group.component';
 import {GroupService} from "./service/group.service";
 import { AddUserComponent } from './user/register-user/register-user.component';
-import { AssignUserToGroupComponent } from './user/assign-user-to-group/assign-user-to-group.component';
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 import { AddQuestionnaireComponent } from './questionnaire/add-questionnaire/add-questionnaire.component';
 import { AddQuestionnaireToGroupComponent } from './questionnaire/add-questionnaire-to-group/add-questionnaire-to-group.component';
 import {SocialLoginModule, AuthServiceConfig, GoogleLoginProvider, AuthService} from 'angular5-social-login';
 import {getAuthServiceConfigs} from './socialloginConfig';
+import { PhoneNumberComponent } from './user/phone-number/phone-number.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,10 @@ import {getAuthServiceConfigs} from './socialloginConfig';
     LoginComponent,
     // AddGroupComponent,
     AddUserComponent,
-    AssignUserToGroupComponent,
+    ForgotPasswordComponent,
     AddQuestionnaireComponent,
     AddQuestionnaireToGroupComponent,
+    PhoneNumberComponent,
   ],
   imports: [
     BrowserModule,

@@ -83,3 +83,11 @@ body { padding: 2em; }
 .loginBtn--google:focus {
   background: #E74B37;
 }
+#forgotpassword{
+  color: white;
+  text-decoration: none;
+}
+#forgotpassword:hover{
+  color: #1175A3;
+  text-decoration: none;
+}

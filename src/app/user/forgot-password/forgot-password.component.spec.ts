@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AssignUserToGroupComponent } from './assign-user-to-group.component';
+import { ForgotPasswordComponent } from './forgot-password.component';
 
-describe('AssignUserToGroupComponent', () => {
+describe('ForgotPasswordComponent', () => {
   let component: AssignUserToGroupComponent;
   let fixture: ComponentFixture<AssignUserToGroupComponent>;
 

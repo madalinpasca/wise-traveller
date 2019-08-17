@@ -18,6 +18,13 @@ import { AddQuestionnaireToGroupComponent } from './questionnaire/add-questionna
 import {SocialLoginModule, AuthServiceConfig, GoogleLoginProvider, AuthService} from 'angular5-social-login';
 import {getAuthServiceConfigs} from './socialloginConfig';
 import { PhoneNumberComponent } from './user/phone-number/phone-number.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -29,6 +36,7 @@ import { PhoneNumberComponent } from './user/phone-number/phone-number.component
     HomePageComponent,
     AddQuestionnaireToGroupComponent,
     PhoneNumberComponent,
+    MainNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,13 @@ import { PhoneNumberComponent } from './user/phone-number/phone-number.component
     FormsModule,
     CustomMaterialModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [UserService, GroupService, {
     provide: AuthServiceConfig,

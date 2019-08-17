@@ -1,8 +1,7 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <button mat-button>
-      <mat-icon>vertical_split</mat-icon>
-    </button>
+
+    <app-main-nav *ngIf="show"></app-main-nav>
     <span><img src="../assets/logo.png" width="230" height="83" ></span>
     <span class="example-fill-remaining-space"></span>
     <span class="align-center"></span>

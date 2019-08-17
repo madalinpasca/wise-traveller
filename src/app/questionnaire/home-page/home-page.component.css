@@ -1,0 +1,67 @@
+.login-card{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  margin-top: 10vh;
+  background: #1175A3;
+}
+
+.login-header{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  padding-top: 10vh;
+}
+.example-form{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.dividers{
+  background: #424242;
+}
+.mat-card .mat-divider-horizontal {
+  position: absolute;
+  left: 0;
+  margin-left: 1.2%;
+  width: 97.5%;
+}
+.mat-grid-tile {
+  background: #1175A3;
+}
+
+.example-full-width{
+  width: 98%;
+  height: auto;
+  margin-left: 1%;
+}
+.expand{
+  /*width: 100% !important;*/
+  /*height: 100% !important;*/
+}
+
+/*.fmm {*/
+  /*height: 100px !important;*/
+/*}*/
+/*.mat-expansion-panel-content .expansion-look{*/
+  /*font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;*/
+  /*position: fixed !important;*/
+  /*margin-top: 50px !important;*/
+  /*padding-top: 50px !important;*/
+  /*width: 289px !important;*/
+  /*background: aquamarine !important;*/
+/*}*/
+.mat-grid-tile[_ngcontent-kxo-c6] {
+  background: #1175A3;
+  width: 100px;
+}
+.mat-expansion-panel-content .ng-trigger .ng-trigger-bodyExpansion{
+  font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+  position: fixed !important;
+  margin-top: 50px !important;
+  padding-top: 50px !important;
+  width: 289px !important;
+  background: aquamarine !important;
+}

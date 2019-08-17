@@ -13,7 +13,9 @@ import {
   MatSnackBarModule,
   MatSelectModule,
   MatCheckboxModule, MatRadioModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatGridListModule,
+  MatExpansionModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 @NgModule({
@@ -29,7 +31,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatMenuModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatGridListModule,
+    MatExpansionModule
   ],
   exports: [
     CommonModule,
@@ -46,7 +50,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatGridListModule,
+    MatExpansionModule
   ],
 })
 export class CustomMaterialModule { }

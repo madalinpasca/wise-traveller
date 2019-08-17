@@ -1,3 +1,3 @@
 export class StringWrapper {
-  value: string;
+  public value: string
 }

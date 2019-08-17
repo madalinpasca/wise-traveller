@@ -1,22 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import {FormsModule} from "@angular/forms";
-import {CustomMaterialModule} from "./core/material.module";
-import {AppRoutingModule} from "./core/app-routing.module";
-import {HttpClientModule} from "@angular/common/http";
-import {UserService} from "./service/UserService";
-// import { AddGroupComponent } from './group/add-group/add-group.component';
-import {GroupService} from "./service/group.service";
+import { FormsModule } from "@angular/forms";
+import { CustomMaterialModule } from "./core/material.module";
+import { AppRoutingModule } from "./core/app-routing.module";
+import { HttpClientModule } from "@angular/common/http";
+import { UserService } from "./service/user.service";
 import { AddUserComponent } from './user/register-user/register-user.component';
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
-import {HomePageComponent} from './questionnaire/home-page/home-page.component';
-import { AddQuestionnaireToGroupComponent } from './questionnaire/add-questionnaire-to-group/add-questionnaire-to-group.component';
-import {SocialLoginModule, AuthServiceConfig, GoogleLoginProvider, AuthService} from 'angular5-social-login';
-import {getAuthServiceConfigs} from './socialloginConfig';
+import { HomePageComponent } from './questionnaire/home-page/home-page.component';
+import { SocialLoginModule, AuthServiceConfig } from 'angular5-social-login';
+import { getAuthServiceConfigs} from './socialloginConfig';
 import { PhoneNumberComponent } from './user/phone-number/phone-number.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -30,11 +25,9 @@ import { MatListModule } from '@angular/material/list';
   declarations: [
     AppComponent,
     LoginComponent,
-    // AddGroupComponent,
     AddUserComponent,
     ForgotPasswordComponent,
     HomePageComponent,
-    AddQuestionnaireToGroupComponent,
     PhoneNumberComponent,
     MainNavComponent,
   ],
@@ -52,7 +45,7 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatListModule
   ],
-  providers: [UserService, GroupService, {
+  providers: [UserService, {
     provide: AuthServiceConfig,
     useFactory: getAuthServiceConfigs
   }],

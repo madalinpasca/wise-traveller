@@ -4,11 +4,13 @@
   </mat-card-header>
   <mat-card-content>
     <form class="example-form">
-      <table class="example-full-width" cellspacing="0">
+      <table class="example-full-width">
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="First name" [(ngModel)]="firstname" name="firstname" required>
+              <label>
+                <input matInput placeholder="First name" [(ngModel)]="firstname" name="firstname" required>
+              </label>
             </mat-form-field>
           </td>
         </tr>
@@ -16,7 +18,9 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Last name" [(ngModel)]="lastname" name="lastname" required>
+              <label>
+                <input  matInput placeholder="Last name" [(ngModel)]="lastname" name="lastname" required>
+              </label>
             </mat-form-field>
           </td>
         </tr>
@@ -24,14 +28,18 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
+              <label>
+                <input label="email" matInput placeholder="Email" [(ngModel)]="email" name="email" required>
+              </label>
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Password" [(ngModel)]="password" name="password" type="password" required>
+              <label>
+                <input matInput placeholder="Password" [(ngModel)]="password" name="password" type="password" required>
+              </label>
             </mat-form-field>
           </td>
         </tr>
@@ -39,14 +47,25 @@
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Phone number" [(ngModel)]="phoneNumber" name="phonenumber" type="password" required>
+              <label>
+                <input matInput placeholder="Phone number" [(ngModel)]="phoneNumber" name="phonenumber" type="password" required>
+              </label>
             </mat-form-field>
           </td>
         </tr>
 
+        <tr *ngIf="imageSrc != null">
+          <td>
+            <img [src]="imageSrc" alt="your image" [width]="imageWidth" [height]="imageHeight">
+          </td>
+        </tr>
+      </table>
+    </form>
+    <form class="example-form">
+      <table class="example-full-width">
         <tr>
           <td>
-            <input hidden type="file" #upploader (change)="uploadFile($event)" required/>
+            <input hidden type="file" #upploader (change)="uploadFile($event)" accept=".png,.jpg,.bmp" required/>
           </td>
         </tr>
       </table>

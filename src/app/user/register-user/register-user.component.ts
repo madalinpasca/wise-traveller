@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Group} from "../../domain/Group";
-// import {UserService} from "../../service/user.service";
-import {GroupService} from "../../service/group.service";
-import {MatSnackBar} from "@angular/material";
+// import {MatSnackBar} from "@angular/material";
+import {UserService} from "../../service/user.service";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-register-user',
@@ -12,37 +11,59 @@ import {MatSnackBar} from "@angular/material";
 export class AddUserComponent implements OnInit {
   name: string;
   email: string;
-  selectedGroupId: number;
-  groups: Group[];
+  firstname: string;
+  lastname: string;
+  password: string;
+  phoneNumber: string;
+  file: File;
+  imageSrc: string | ArrayBuffer;
+  imageHeight: number;
+  imageWidth: number;
 
-  constructor(/*private userService: UserService,*/
-              private groupService: GroupService,
-              private snackBar: MatSnackBar) {
+
+  constructor(private userService: UserService
+              /*private snackBar: MatSnackBar*/) {
   }
 
-  ngOnInit() {
-    let userId = parseInt(localStorage.getItem("userId"));
-    this.groupService.groupsOwnByUser(userId).subscribe(groups => {
-      this.groups = groups
-    })
-  }
+  ngOnInit() {}
 
   addUser() {
-    // this.userService.addUser(this.name, this.email, this.selectedGroupId).subscribe(response => {
-    //   this.displayPopup(response, "Close")
-    // }, err => {
-    //   this.displayPopup(err.error.message, "Close")
-    //
-    // })
+    this.userService.uploadProfilePicture(this.file).subscribe(
+      ()=>{
+        console.log("OK")
+      },(error: HttpErrorResponse)=>{
+        console.log("NOT OK" + error.message)
+      }
+    )
   }
 
-  private displayPopup(message: string, action: string) {
-    this.snackBar.open(message, action, {
-      duration: 6000
-    });
-  }
+  // private displayPopup(message: string, action: string) {
+  //   this.snackBar.open(message, action, {
+  //     duration: 6000
+  //   });
+  // }
 
-  uploadFile($event) {
-    console.log($event.target.files[0]);
+  uploadFile(event) {
+    let fileList: FileList = event.target.files;
+    if(fileList.length > 0) {
+      this.file = fileList.item(0);
+      const reader = new FileReader();
+      reader.onload = () => {
+        var img = new Image();
+        img.onload = () => {
+          if (img.width > img.height) {
+            this.imageWidth = 100;
+            this.imageHeight = 100 * img.height / img.width;
+          } else {
+            this.imageWidth = 100 * img.width / img.height;
+            this.imageHeight = 100;
+          }
+          this.imageSrc = reader.result;
+        };
+        img.src = reader.result.toString();
+      };
+
+      reader.readAsDataURL(this.file);
+    }
   }
 }

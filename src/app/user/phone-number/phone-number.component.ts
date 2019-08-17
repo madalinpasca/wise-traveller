@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Group} from "../../domain/Group";
-import {User} from "../../domain/User";
-// import {UserService} from "../../service/user.service";
-import {GroupService} from "../../service/group.service";
-import {MatSnackBar} from "@angular/material";
+// import {MatSnackBar} from "@angular/material";
+import {UserService} from "../../service/user.service";
+import {StringWrapper} from "../../domain/StringWrapper";
+import {Observable} from "rxjs";
+import {AuthToken} from "../../domain/AuthToken";
 
 @Component({
   selector: 'phone-number',
@@ -11,46 +11,44 @@ import {MatSnackBar} from "@angular/material";
   styleUrls: ['./phone-number.component.css']
 })
 export class PhoneNumberComponent implements OnInit {
-  selectedUserId: number;
-  selectdGroupId: number;
-  userFromUserGroups: User[];
-  groupsOwnByUser: Group[];
+  private last_token: any;
+  phonenumber: string;
 
-  constructor(/*private userService: UserService,*/
-              private groupService: GroupService,
-              private snackBar: MatSnackBar) {
+  constructor(private userService: UserService
+              /*private snackBar: MatSnackBar*/) {
   }
 
   ngOnInit() {
-    let userId = parseInt(localStorage.getItem("userId"));
-    // this.userService.userFromUserGroups(userId).subscribe(
-    //   users => {
-    //     this.userFromUserGroups = users;
-    //   }
-    // )
-
-    this.groupService.groupsOwnByUser(userId).subscribe(groups => {
-      this.groupsOwnByUser = groups;
-    })
+    this.last_token = JSON.parse(localStorage.getItem("last_token"));
   }
 
-  addUserToGroup() {
-    // this.userService.addUserToGroup(this.selectedUserId, this.selectdGroupId).subscribe(
-    //   response => {
-    //     this.displayPopup(response, "Close")
-    //   }, err => {
-    //     this.displayPopup(err.error.message, "Close")
-    //   })
+  // private displayPopup(message: string, action: string) {
+  //   this.snackBar.open(message, action, {
+  //     duration: 6000
+  //   });
+  // }
 
-  }
-
-  private displayPopup(message: string, action: string) {
-    this.snackBar.open(message, action, {
-      duration: 6000
+  sendPhoneNumber() {
+    let x : Observable<StringWrapper>;
+    if (this.last_token.type == "Google") {
+      x = this.userService.loginWithGoogle(this.last_token.token, this.phonenumber)
+    } else if (this.last_token.type == "Facebook") {
+      x = this.userService.loginWithFacebook(this.last_token.token, this.phonenumber)
+    }
+    x.subscribe((value: StringWrapper) => {
+      this.loginWithAuthorizationCode(value.value)
+    }, (/*error: any*/) => {
+      console.log('User login failed');
     });
   }
 
-  // sendPhoneNumber() {
-  //
-  // }
+  private loginWithAuthorizationCode(authorizationCode: string) {
+    this.userService.loginWithAuthorizationCode(authorizationCode).subscribe((value: AuthToken) => {
+      console.log('User logged!');
+      localStorage.removeItem('last_token');
+      localStorage.setItem('token', JSON.stringify(value));
+    }, (/*errorAc*/) => {
+      console.log('User login failed');
+    });
+  }
 }

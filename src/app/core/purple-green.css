@@ -2463,3 +2463,13 @@ mat-footer-row, mat-header-row, mat-row, td.mat-cell, td.mat-footer-cell, th.mat
 .mat-simple-snackbar-action {
   color: inherit
 }
+
+.blue-snackbar {
+  background: #2196F3;
+}
+.green-snackbar {
+  background: #1DE9B6;
+}
+.red-snackbar {
+  background: #B00020;
+}

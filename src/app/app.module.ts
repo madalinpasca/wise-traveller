@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './user/login/login.component';
 import { FormsModule } from "@angular/forms";
 import { CustomMaterialModule } from "./core/material.module";
 import { AppRoutingModule } from "./core/app-routing.module";
@@ -9,7 +9,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { UserService } from "./service/user.service";
 import { AddUserComponent } from './user/register-user/register-user.component';
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
-import { HomePageComponent } from './questionnaire/home-page/home-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
 import { SocialLoginModule, AuthServiceConfig } from 'angular5-social-login';
 import { getAuthServiceConfigs} from './socialloginConfig';
 import { PhoneNumberComponent } from './user/phone-number/phone-number.component';

@@ -5,36 +5,39 @@
   </mat-card-header>
   <mat-card-content>
     <form class="example-form">
-      <table class="example-full-width" cellspacing="0">
+      <table class="example-full-width">
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
+              <label>
+                <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
+              </label>
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+              <label>
+                <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+              </label>
             </mat-form-field>
           </td>
         </tr>
       </table>
     </form>
-    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Login</button>
+    <button mat-raised-button (click)="login();" color="primary">Login</button>
     <button mat-raised-button routerLink="/addUser" color="primary">
       <span>User registration</span>
     </button>
   </mat-card-actions>
   <mat-card-actions>
-    <button mat-raised-button class="loginBtn loginBtn--facebook" (click)="submitLogin();">
+    <button mat-raised-button class="loginBtn loginBtn--facebook" (click)="submitLoginFacebook();">
       Login with Facebook
     </button>
-    <button mat-raised-button class="loginBtn loginBtn--google" (click)="submitLoginG();">
+    <button mat-raised-button class="loginBtn loginBtn--google" (click)="submitLoginGoogle();">
       Login with Google
     </button>
   </mat-card-actions>

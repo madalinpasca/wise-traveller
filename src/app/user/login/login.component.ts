@@ -1,10 +1,10 @@
 import {Component, NgZone, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {UserService} from '../service/user.service';
-// import {MatSnackBar} from '@angular/material';
-import {StringWrapper} from '../domain/StringWrapper';
-import {AuthToken} from '../domain/AuthToken';
+import {UserService} from '../../service/user.service';
+import {StringWrapper} from '../../domain/StringWrapper';
+import {AuthToken} from '../../domain/AuthToken';
 import {AuthService, GoogleLoginProvider} from 'angular5-social-login';
+import {MatSnackBar} from "@angular/material";
 
 declare var FB: any;
 
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
               private userService: UserService,
               private authService: AuthService,
-              /*private snackBar: MatSnackBar,*/
+              private snackBar: MatSnackBar,
               private ngZone: NgZone) {
   }
   email: string;
@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
       });
       FB.AppEvents.logPageView();
     };
-
     (function(d, s, id) {
       let js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {return; }
@@ -42,64 +41,56 @@ export class LoginComponent implements OnInit {
       js.src = 'https://connect.facebook.net/en_US/sdk.js';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+  }
 
+  private displayError(message: string) {
+    this.snackBar.open(message, "Error", {
+      duration: 6000,
+      panelClass: 'red-snackbar'
+    });
   }
 
   login(): void {
-    // this.userService.loginUser(this.email, this.password).subscribe
-    // (message => {
-    //   this.displayPopup(message, 'Close');
-    //   this.userService.findUserByEmail(this.email).subscribe(user => {
-    //     localStorage.setItem('userId', user.id.toString());
-    //     localStorage.setItem('userEmail', user.email.toString());
-    //   });
-    // }, err => {
-    //   this.displayPopup(err.error.message, 'Close');
-    // });
+    this.userService.loginUser(this.email, this.password).subscribe(token => {
+      localStorage.setItem('token', JSON.stringify(token));
+      this.router.navigate(['homePage']).finally();
+    }, ()=> {
+      this.displayError("Login failed")
+    });
   }
 
-  // private displayPopup(message: string, action: string) {
-  //   this.snackBar.open(message, action, {
-  //     duration: 6000
-  //   });
-  // }
-
-  submitLogin() {
-    console.log('submit login to facebook');
-    // FB.login();
+  submitLoginFacebook() {
+    // noinspection TypeScriptValidateJSTypes
     FB.login((response) => {
-      console.log('submitLogin', response);
       if (response.authResponse) {
         const access_token = FB.getAuthResponse().accessToken;
         this.loginWithFacebook(access_token);
       } else {
-        console.log('User login failed');
+        this.displayError("Facebook login failed")
       }
     });
-
   }
 
-  submitLoginG() {
-    console.log('submit login to google');
+  submitLoginGoogle() {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
       (userData) => {
         this.loginWithGoogle(userData.idToken);
-
       }
-    );
-
+    ).catch(()=>{
+      this.displayError("Google login failed")
+    });
   }
 
   private loginWithGoogle(idToken: string) {
     this.userService.loginWithGoogle(idToken).subscribe((value: StringWrapper) => {
       if (value.value == idToken) {
         localStorage.setItem('last_token', JSON.stringify({token:idToken, type:"Google"}));
-        this.router.navigate(['phoneNumber']);
+        this.router.navigate(['phoneNumber']).finally();
       } else {
         this.loginWithAuthorizationCode(value.value);
       }
-    }, (/*errorGoogle*/) => {
-      console.log('User login failed');
+    }, () => {
+      this.displayError("Google login failed")
     });
   }
 
@@ -107,24 +98,23 @@ export class LoginComponent implements OnInit {
     this.userService.loginWithFacebook(accessToken).subscribe((value: StringWrapper) => {
       if (value.value == accessToken) {
         localStorage.setItem('last_token', JSON.stringify({token:accessToken, type:"Facebook"}));
-        this.ngZone.run(()=>{
-          this.router.navigate(['phoneNumber']);
+        this.ngZone.run(()=> {
+          this.router.navigate(['phoneNumber']).finally();
         });
-
       } else {
         this.loginWithAuthorizationCode(value.value);
       }
-    }, (/*errorFb*/) => {
-      console.log('User login failed');
+    }, () => {
+      this.displayError("Facebook login failed")
     });
   }
 
   private loginWithAuthorizationCode(authorizationCode: string) {
     this.userService.loginWithAuthorizationCode(authorizationCode).subscribe((value: AuthToken) => {
-      console.log('User logged!');
       localStorage.setItem('token', JSON.stringify(value));
-    }, (/*errorAc*/) => {
-      console.log('User login failed');
+      this.router.navigate(['homePage']).finally();
+    }, () => {
+      this.displayError("Login failed")
     });
   }
 }

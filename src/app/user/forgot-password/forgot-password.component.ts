@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-// import {MatSnackBar} from "@angular/material";
+import {UserService} from "../../service/user.service";
+import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material";
 
 @Component({
   selector: 'forgot-password',
@@ -7,19 +9,31 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent implements OnInit {
+  password: string;
+  email: string;
 
-  constructor(/*private snackBar: MatSnackBar*/) {
+  constructor(private router: Router,
+              private snackBar: MatSnackBar,
+              private userService: UserService) {
   }
 
   ngOnInit() {}
 
-  addUserToGroup() {
-
+  private displayError(message: string) {
+    this.snackBar.open(message, "Error", {
+      duration: 6000,
+      panelClass: ['red-snackbar']
+    });
   }
 
-  // private displayPopup(message: string, action: string) {
-  //   this.snackBar.open(message, action, {
-  //     duration: 6000
-  //   });
-  // }
+  resetPassword() {
+    this.userService.resetPasswordNotLogged(this.email, this.password).subscribe(
+      ()=> {
+        this.router.navigate(['']).finally()
+      },
+      ()=> {
+        this.displayError("Could not reset password!")
+      }
+    )
+  }
 }

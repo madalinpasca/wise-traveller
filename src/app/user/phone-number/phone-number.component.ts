@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-// import {MatSnackBar} from "@angular/material";
+import {MatSnackBar} from "@angular/material";
 import {UserService} from "../../service/user.service";
 import {StringWrapper} from "../../domain/StringWrapper";
 import {Observable} from "rxjs";
 import {AuthToken} from "../../domain/AuthToken";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'phone-number',
@@ -14,41 +15,43 @@ export class PhoneNumberComponent implements OnInit {
   private last_token: any;
   phonenumber: string;
 
-  constructor(private userService: UserService
-              /*private snackBar: MatSnackBar*/) {
+  constructor(private userService: UserService,
+              private router: Router,
+              private snackBar: MatSnackBar) {
   }
 
-  ngOnInit() {
+  ngOnInit(){
     this.last_token = JSON.parse(localStorage.getItem("last_token"));
   }
 
-  // private displayPopup(message: string, action: string) {
-  //   this.snackBar.open(message, action, {
-  //     duration: 6000
-  //   });
-  // }
+  private displayError(message: string) {
+    this.snackBar.open(message, "Error", {
+      duration: 6000,
+      panelClass: "red-snackbar"
+    });
+  }
 
   sendPhoneNumber() {
-    let x : Observable<StringWrapper>;
+    let observable : Observable<StringWrapper>;
     if (this.last_token.type == "Google") {
-      x = this.userService.loginWithGoogle(this.last_token.token, this.phonenumber)
+      observable = this.userService.loginWithGoogle(this.last_token.token, this.phonenumber)
     } else if (this.last_token.type == "Facebook") {
-      x = this.userService.loginWithFacebook(this.last_token.token, this.phonenumber)
+      observable = this.userService.loginWithFacebook(this.last_token.token, this.phonenumber)
     }
-    x.subscribe((value: StringWrapper) => {
+    observable.subscribe((value: StringWrapper) => {
       this.loginWithAuthorizationCode(value.value)
-    }, (/*error: any*/) => {
-      console.log('User login failed');
+    }, () => {
+      this.displayError("Phone registration failed");
     });
   }
 
   private loginWithAuthorizationCode(authorizationCode: string) {
     this.userService.loginWithAuthorizationCode(authorizationCode).subscribe((value: AuthToken) => {
-      console.log('User logged!');
       localStorage.removeItem('last_token');
       localStorage.setItem('token', JSON.stringify(value));
-    }, (/*errorAc*/) => {
-      console.log('User login failed');
+      this.router.navigate(['homePage']).finally();
+    }, () => {
+      this.displayError("Phone registration failed");
     });
   }
 }

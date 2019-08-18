@@ -6,6 +6,7 @@ import {AuthToken} from '../domain/AuthToken';
 import {RegisterDto} from "../domain/RegisterDto";
 import {ServerURL} from "./ServerURL";
 import {IdWrapper} from "../domain/IdWrapper";
+import {User} from "../domain/User";
 
 @Injectable()
 export class UserService {
@@ -52,6 +53,14 @@ export class UserService {
     return this.http.post<AuthToken>(ServerURL.oauthLogin, formData, {
       headers: new HttpHeaders({
         Authorization: 'Basic Q2xpZW50OnBhc3N3b3Jk'
+      })
+    });
+  }
+
+  current(token: AuthToken): Observable<User> {
+    return this.http.post<User>(ServerURL.currentUser, '', {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + token.access_token
       })
     });
   }

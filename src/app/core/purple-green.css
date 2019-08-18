@@ -2473,3 +2473,11 @@ mat-footer-row, mat-header-row, mat-row, td.mat-cell, td.mat-footer-cell, th.mat
 .red-snackbar {
   background: #B00020;
 }
+
+.container-center {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  width: 70px;
+  justify-content: center;
+}

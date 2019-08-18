@@ -20,6 +20,10 @@ export class LoginComponent implements OnInit {
               private authService: AuthService,
               private snackBar: MatSnackBar,
               private ngZone: NgZone) {
+    const token = JSON.parse(localStorage.getItem("token"));
+    if (token) {
+      router.navigate(['homePage']).finally();
+    }
   }
   email: string;
   password: string;

@@ -1,16 +1,29 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
 
-    <app-main-nav *ngIf="show"></app-main-nav>
-    <span><img src="../assets/logo.png" width="230" height="83" ></span>
+    <app-main-nav *ngIf="user != null"></app-main-nav>
+    <span><!--suppress CheckImageSize -->
+      <img src="../assets/logo.png" width="230px" height="83px"  alt="site-logo"></span>
     <span class="example-fill-remaining-space"></span>
     <span class="align-center"></span>
     <span class="example-spacer"></span>
-    <button *ngIf="show" mat-button>About</button>
-    <button *ngIf="show" mat-button>Contact</button>
-    <button *ngIf="show" mat-icon-button [matMenuTriggerFor]="menu">
+    <div class="container-center" *ngIf="user != null" [matMenuTriggerFor]="menuUser">
+      <img [src]="profileImg" [width]="profileWidth" [height]="profileHeight" alt="Profile picture"/>
+    </div>
+    <button *ngIf="user != null" mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
+    <mat-menu #menuUser="matMenu">
+      <button mat-menu-item routerLink="addGroup" (click)="logOut()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Log out</span>
+      </button>
+
+      <button mat-menu-item routerLink="assignUserToGroup">
+        <mat-icon>transfer_within_a_station</mat-icon>
+        <span>Assign user to group</span>
+      </button>
+    </mat-menu>
     <mat-menu #menu="matMenu">
 
 

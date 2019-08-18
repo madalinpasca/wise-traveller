@@ -25,6 +25,10 @@ export class AddUserComponent implements OnInit {
   constructor(private userService: UserService,
               private snackBar: MatSnackBar,
               private router: Router) {
+    const token = JSON.parse(localStorage.getItem("token"));
+    if (token) {
+      router.navigate(['homePage']).finally();
+    }
   }
 
   ngOnInit() {}

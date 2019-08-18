@@ -18,10 +18,17 @@ export class PhoneNumberComponent implements OnInit {
   constructor(private userService: UserService,
               private router: Router,
               private snackBar: MatSnackBar) {
+    const token = JSON.parse(localStorage.getItem("token"));
+    if (token) {
+      router.navigate(['homePage']).finally();
+    }
+    this.last_token = JSON.parse(localStorage.getItem("last_token"));
+    if (!this.last_token) {
+      router.navigate(['login']).finally();
+    }
   }
 
   ngOnInit(){
-    this.last_token = JSON.parse(localStorage.getItem("last_token"));
   }
 
   private displayError(message: string) {

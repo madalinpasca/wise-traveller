@@ -15,6 +15,10 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(private router: Router,
               private snackBar: MatSnackBar,
               private userService: UserService) {
+    const token = JSON.parse(localStorage.getItem("token"));
+    if (token) {
+      router.navigate(['homePage']).finally();
+    }
   }
 
   ngOnInit() {}

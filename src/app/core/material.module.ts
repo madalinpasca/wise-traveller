@@ -15,7 +15,7 @@ import {
   MatCheckboxModule, MatRadioModule,
   MatProgressBarModule,
   MatGridListModule,
-  MatExpansionModule
+  MatExpansionModule,
 } from '@angular/material';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 @NgModule({

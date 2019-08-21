@@ -10,130 +10,22 @@
         <mat-list-item>
           <span>Near you</span>
         </mat-list-item>
-        <!--<button mat-button (click)="selected = all[0];">text</button>-->
-        <!--<button mat-button (click)="selected = all[1]">text</button>-->
-        <!--<div *ngIf="selected != null">-->
-          <!--<img [src]="selected.image" />-->
-          <!--<p>{{selected.text}}</p>-->
+        <!--<button mat-button (click)="select(0)">text</button>-->
+        <!--<button mat-button (click)="select(1)">text</button>-->
+        <!--<div *ngIf="isSelected()">-->
+          <!--<img [src]="getSelected().image" />-->
+          <!--<p>{{getSelected().text}}</p>-->
         <!--</div>-->
         <mat-grid-list cols="5" rowHeight="1:1">
-          <!--<mat-grid-tile>-->
-          <!--<mat-expansion-panel class="mat-grid-tile">-->
-
-              <!--<mat-expansion-panel-header>-->
-
-                <!--<mat-panel-title>-->
-                  <!--1-->
-                <!--</mat-panel-title>-->
-
-                <!--<mat-panel-description>-->
-                  <!--primul-->
-                <!--</mat-panel-description>-->
-
-              <!--</mat-expansion-panel-header>-->
-<!--FIRST-->
-          <!--</mat-expansion-panel>-->
-          <!--</mat-grid-tile>-->
-
-
-
-
-          <mat-expansion-panel class="mat-grid-tile expand expansion-look">
-
-            <mat-expansion-panel-header class="expand">
-
-              <mat-panel-title>
-                1
-              </mat-panel-title>
-
-              <mat-panel-description>
-                primul
-              </mat-panel-description>
-
-            </mat-expansion-panel-header>
-
-            FIRST
-          </mat-expansion-panel>
 
 
           <mat-grid-tile>
-            <mat-expansion-panel class="mat-grid-tile" >
-
-              <mat-expansion-panel-header>
-
-                <mat-panel-title>
-                  1
-                </mat-panel-title>
-
-                <mat-panel-description>
-                  primul
-                </mat-panel-description>
-
-              </mat-expansion-panel-header>
-              FIRST
-            </mat-expansion-panel>
+            <button mat-button class="expand" (click)="openDialog()"><img src="../assets/alupigus.jpg" width="100%" height="100%"></button>
           </mat-grid-tile>
-
-
-          <!--<mat-expansion-panel>-->
-
-            <!--<mat-expansion-panel-header>-->
-
-              <!--<mat-panel-title>-->
-                <!--1-->
-              <!--</mat-panel-title>-->
-
-              <!--<mat-panel-description>-->
-                <!--primul-->
-              <!--</mat-panel-description>-->
-
-            <!--</mat-expansion-panel-header>-->
-            <!--FIRST-->
-          <!--</mat-expansion-panel>-->
-
-
-
-
-          <!--<mat-expansion-panel>-->
-
-            <!--<mat-expansion-panel-header>-->
-
-              <!--<mat-panel-title>-->
-                <!--1-->
-              <!--</mat-panel-title>-->
-
-              <!--<mat-panel-description>-->
-                <!--primul-->
-              <!--</mat-panel-description>-->
-
-            <!--</mat-expansion-panel-header>-->
-            <!--FIRST-->
-          <!--</mat-expansion-panel>-->
-
-
-
-
-          <!--<mat-expansion-panel>-->
-
-            <!--<mat-expansion-panel-header>-->
-
-              <!--<mat-panel-title>-->
-                <!--1-->
-              <!--</mat-panel-title>-->
-
-              <!--<mat-panel-description>-->
-                <!--primul-->
-              <!--</mat-panel-description>-->
-
-            <!--</mat-expansion-panel-header>-->
-            <!--FIRST-->
-          <!--</mat-expansion-panel>-->
-
-
-
-          <!--<mat-grid-tile>Third</mat-grid-tile>-->
-          <!--<mat-grid-tile>Fourth</mat-grid-tile>-->
-          <!--<mat-grid-tile>Fifth</mat-grid-tile>-->
+          <mat-grid-tile>Second</mat-grid-tile>
+          <mat-grid-tile>Third</mat-grid-tile>
+          <mat-grid-tile>Fourth</mat-grid-tile>
+          <mat-grid-tile>Fifth</mat-grid-tile>
         </mat-grid-list>
         <mat-divider></mat-divider>
         <mat-list-item>Most appreciated</mat-list-item>
@@ -141,6 +33,11 @@
         <mat-list-item>Recently added</mat-list-item>
       </mat-list>
 
+
+
+      <!-- Copyright 2019 Google Inc. All Rights Reserved.
+          Use of this source code is governed by an MIT-style license that
+          can be found in the LICENSE file at http://angular.io/license -->
 
     </table>
   </mat-card-content>

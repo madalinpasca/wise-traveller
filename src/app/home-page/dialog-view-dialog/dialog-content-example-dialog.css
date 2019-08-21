@@ -1,0 +1,35 @@
+#container {
+  width: 100%;
+  margin: 5em auto;
+  padding: 0;
+  background: #fff;
+}
+
+.items {
+  max-width: 300px;
+  height: 300px;
+  background: #ECECEC;
+}
+#left, #right{
+  margin: 30px;
+}
+.images-carousel{
+}
+.carousel-img{
+  max-width: 25%;
+  max-height: 25%;
+  text-align: center;
+}
+.body{
+  text-align: center;
+}
+.picsum-img-wrapper{
+  text-align: center;
+}
+/*.carousel-dimensions{*/
+  /*max-width: 50%;*/
+  /*max-height: 50%;*/
+/*}*/
+.carousel-item{
+
+}

@@ -1,0 +1,73 @@
+<h2 mat-dialog-title>{{ana}}</h2>
+<mat-dialog-content class="mat-typography">
+
+  <!--<div id="container" *ngIf="items.length > 0">-->
+    <!--<div ng2-carouselamos="slides-wrapper"-->
+      <!--[items]="items"-->
+      <!--[width]="900"-->
+      <!--[$prev]="prev"-->
+      <!--[$next]="next"-->
+      <!--[$item]="item">-->
+    <!--<ng-template #prev>-->
+      <!--<img src="../assets/images/left-arrow.png">-->
+    <!--</ng-template>-->
+
+    <!--<ng-template #next>-->
+      <!--<img src="../assets/images/right-arrow.png">-->
+    <!--</ng-template>-->
+
+    <!--<ng-template #item let-item let-i="index">-->
+      <!--<div class="items">-->
+        <!--<img [width]="item.width" [height]="item.height" src="{{ item.name }}">-->
+      <!--</div>-->
+    <!--</ng-template>-->
+    <!--</div>-->
+
+  <!--</div>-->
+  <mat-divider></mat-divider>
+
+  <ngb-carousel class="carousel-dimensions" *ngIf="images">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="carousel-img" [src]="images[0]" alt="Random first slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="carousel-img" [src]="images[1]" alt="Random second slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="carousel-img" [src]="images[2]" alt="Random third slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+
+  <mat-divider></mat-divider>
+
+  <h2>About {{ana}}</h2>
+
+  <mat-divider></mat-divider>
+
+  <h2>Location of {{ana}}</h2>
+
+  <mat-divider></mat-divider>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="primary" mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="primary" button [mat-dialog-close]="true" >Book</button>
+</mat-dialog-actions>

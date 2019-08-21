@@ -20,6 +20,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { DialogContentExampleDialogComponent} from './home-page/dialog-view-dialog/dialog-content-example-dialog';
+import {Ng2CarouselamosModule} from 'ng2-carouselamos';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { MatListModule } from '@angular/material/list';
     HomePageComponent,
     PhoneNumberComponent,
     MainNavComponent,
+    DialogContentExampleDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -43,12 +47,17 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    // Ng2CarouselamosModule,
+    NgbModule
   ],
   providers: [UserService, {
     provide: AuthServiceConfig,
     useFactory: getAuthServiceConfigs
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogContentExampleDialogComponent
+  ]
 })
 export class AppModule { }

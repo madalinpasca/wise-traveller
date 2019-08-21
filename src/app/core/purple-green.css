@@ -2481,3 +2481,9 @@ mat-footer-row, mat-header-row, mat-row, td.mat-cell, td.mat-footer-cell, th.mat
   width: 70px;
   justify-content: center;
 }
+
+.mada {
+  object-fit: cover;
+  height: 300px !important;
+  width: 25px;
+}

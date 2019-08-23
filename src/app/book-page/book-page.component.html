@@ -1,0 +1,32 @@
+<mat-card class="login-card">
+  <mat-card-header class="login-header">
+    <mat-card-title>Book you're room!!!</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="dividers">
+    <table class="example-full-width">
+
+      <mat-horizontal-stepper>
+        <mat-step label="Step 1">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>        </mat-step>
+        <mat-step label="Step 2">
+          Content 2
+        </mat-step>
+        <mat-step label="Step 3">
+          Content 3
+        </mat-step>
+        <mat-step label="Step 4">
+          Content 4
+        </mat-step>
+      </mat-horizontal-stepper>
+
+
+
+
+    </table>
+  </mat-card-content>
+</mat-card>
+

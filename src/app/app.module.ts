@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/login/login.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CustomMaterialModule } from "./core/material.module";
 import { AppRoutingModule } from "./core/app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
@@ -20,10 +20,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import {MatDatepickerModule} from '@angular/material';
 import { DialogContentExampleDialogComponent} from './home-page/dialog-view-dialog/dialog-content-example-dialog';
 import {Ng2CarouselamosModule} from 'ng2-carouselamos';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { AgmCoreModule } from '@agm/core';
+import { BookPageComponent } from './book-page/book-page.component';
+import { OwnerComponent } from './owner/owner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,12 +36,15 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HomePageComponent,
     PhoneNumberComponent,
     MainNavComponent,
-    DialogContentExampleDialogComponent
+    DialogContentExampleDialogComponent,
+    BookPageComponent,
+    OwnerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     CustomMaterialModule,
     HttpClientModule,
     SocialLoginModule,
@@ -48,8 +54,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatDatepickerModule,
     // Ng2CarouselamosModule,
-    NgbModule
+    NgbModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDu_quMZAZYtcYph6H39QDmnzQKmTBDDk0'
+    })
   ],
   providers: [UserService, {
     provide: AuthServiceConfig,

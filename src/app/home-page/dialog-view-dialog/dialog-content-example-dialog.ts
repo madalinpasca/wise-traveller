@@ -7,7 +7,11 @@ import {Component} from '@angular/core';
 
 })
 export class DialogContentExampleDialogComponent {
-  public ana: string;
+  latitude = 46.7598893;
+  longitude = 23.534809;
+  locationChosen = false;
+  public locationname: string;
+  public aboutlocation: string;
   // images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 
   // items: Array<any> = [];
@@ -25,6 +29,13 @@ export class DialogContentExampleDialogComponent {
     //   };
       // img.src = image;
     // });
+  }
+  onChoseLocation(event) {
+    // console.log(event);
+  this.latitude = event.coords.lat;
+  this.longitude = event.coords.lng;
+  this.locationChosen = true;
+
   }
 }
 

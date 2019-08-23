@@ -5,6 +5,8 @@ import {AddUserComponent} from "../user/register-user/register-user.component";
 import {ForgotPasswordComponent} from "../user/forgot-password/forgot-password.component";
 import {PhoneNumberComponent} from '../user/phone-number/phone-number.component';
 import {HomePageComponent} from '../home-page/home-page.component';
+import {BookPageComponent} from '../book-page/book-page.component';
+import {OwnerComponent} from '../owner/owner.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -13,6 +15,8 @@ const routes: Routes = [
   {path: 'forgotPassword', component: ForgotPasswordComponent},
   {path: 'phoneNumber', component: PhoneNumberComponent},
   {path: 'homePage', component: HomePageComponent},
+  {path: 'bookPage', component: BookPageComponent},
+  {path: 'ownerPage', component: OwnerComponent},
 ];
 
 @NgModule({

@@ -12,10 +12,15 @@ import {
   MatProgressSpinnerModule,
   MatSnackBarModule,
   MatSelectModule,
-  MatCheckboxModule, MatRadioModule,
+  MatCheckboxModule,
+  MatRadioModule,
   MatProgressBarModule,
   MatGridListModule,
   MatExpansionModule,
+  MatTabsModule,
+  MatStepperModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 @NgModule({
@@ -33,7 +38,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatGridListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTabsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     CommonModule,
@@ -52,7 +61,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatRadioModule,
     MatProgressBarModule,
     MatGridListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTabsModule,
   ],
 })
 export class CustomMaterialModule { }

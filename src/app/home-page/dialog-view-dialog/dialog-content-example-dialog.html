@@ -1,27 +1,27 @@
-<h2 mat-dialog-title>{{ana}}</h2>
+<h2 mat-dialog-title>{{locationname}}</h2>
 <mat-dialog-content class="mat-typography">
 
   <!--<div id="container" *ngIf="items.length > 0">-->
-    <!--<div ng2-carouselamos="slides-wrapper"-->
-      <!--[items]="items"-->
-      <!--[width]="900"-->
-      <!--[$prev]="prev"-->
-      <!--[$next]="next"-->
-      <!--[$item]="item">-->
-    <!--<ng-template #prev>-->
-      <!--<img src="../assets/images/left-arrow.png">-->
-    <!--</ng-template>-->
+  <!--<div ng2-carouselamos="slides-wrapper"-->
+  <!--[items]="items"-->
+  <!--[width]="900"-->
+  <!--[$prev]="prev"-->
+  <!--[$next]="next"-->
+  <!--[$item]="item">-->
+  <!--<ng-template #prev>-->
+  <!--<img src="../assets/images/left-arrow.png">-->
+  <!--</ng-template>-->
 
-    <!--<ng-template #next>-->
-      <!--<img src="../assets/images/right-arrow.png">-->
-    <!--</ng-template>-->
+  <!--<ng-template #next>-->
+  <!--<img src="../assets/images/right-arrow.png">-->
+  <!--</ng-template>-->
 
-    <!--<ng-template #item let-item let-i="index">-->
-      <!--<div class="items">-->
-        <!--<img [width]="item.width" [height]="item.height" src="{{ item.name }}">-->
-      <!--</div>-->
-    <!--</ng-template>-->
-    <!--</div>-->
+  <!--<ng-template #item let-item let-i="index">-->
+  <!--<div class="items">-->
+  <!--<img [width]="item.width" [height]="item.height" src="{{ item.name }}">-->
+  <!--</div>-->
+  <!--</ng-template>-->
+  <!--</div>-->
 
   <!--</div>-->
   <mat-divider></mat-divider>
@@ -58,16 +58,223 @@
 
   <mat-divider></mat-divider>
 
-  <h2>About {{ana}}</h2>
-
+  <h2>About {{locationname}}</h2>
+  <p>{{aboutlocation}}</p>
   <mat-divider></mat-divider>
 
-  <h2>Location of {{ana}}</h2>
-
   <mat-divider></mat-divider>
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>local_florist</mat-icon>
+        </mat-panel-title>
+        <mat-panel-description>
+          Outdoor facilities
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-grid-list cols="3" rowHeight="3:1">
+        <mat-grid-tile>
+          <h2>
+            <mat-icon>local_florist</mat-icon>
+          </h2>
+          <mat-list class="listgrid" role="list">
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              BBQ facilities
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Terrace
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Garden
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <h2>
+            <mat-icon>restaurant</mat-icon>
+          </h2>
+          <mat-list class="listgrid" role="list">
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Breakfast
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Lunch
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Dinner
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <h2>
+            <mat-icon>room_service</mat-icon>
+          </h2>
+
+          <mat-list class="listgrid" role="list">
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Shuttle service
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              24-hour front desk
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Packed lunches
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile>
+          <h2>
+            <mat-icon>kitchen</mat-icon>
+          </h2>
+          <mat-list class="listgrid" role="list">
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Open kitchen
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile>
+          <h2>
+            <mat-icon>wifi</mat-icon>
+          </h2>
+          <mat-list class="listgrid" role="list">
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Free internet
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile>
+          <h2>
+            <mat-icon>pets</mat-icon>
+          </h2>
+          <mat-list class="listgrid" role="list">
+            <mat-list-item role="listitem">
+              <mat-icon>not_interested</mat-icon>
+              Not pet friendly
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile>
+          <h2>
+            <mat-icon>local_parking</mat-icon>
+          </h2>
+          <mat-list class="listgrid" role="list">
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Free parking
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile>
+          <h2>
+            <mat-icon>info</mat-icon>
+          </h2>
+          <mat-list class="listgrid" role="list">
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Smokers areea
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Rooms for families
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-icon>not_interested</mat-icon>
+              Non-smoker rooms
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <h2>
+            <mat-icon>golf_course</mat-icon>
+          </h2>
+          <mat-list class="listgrid" role="list">
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Hiking
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Ping-pong
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Playground
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <h2>
+            <mat-icon>message</mat-icon>
+          </h2>
+          <mat-list class="listgrid" role="list">
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              English
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              French
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <mat-icon>done</mat-icon>
+              Romanian
+            </mat-list-item>
+          </mat-list>
+        </mat-grid-tile>
+
+
+      </mat-grid-list>
+
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+
+
+
+  </mat-accordion>
+  <mat-divider></mat-divider>
+  <h2>Location of {{locationname}}</h2>
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu_quMZAZYtcYph6H39QDmnzQKmTBDDk0&callback=initMap"
+          type="text/javascript"></script>
+  <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
+    <agm-marker
+      [latitude]="latitude"
+      [longitude]="longitude"
+      *ngIf="locationChosen"></agm-marker>
+  </agm-map>
+  <mat-divider></mat-divider>
+
 
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-raised-button color="primary" mat-dialog-close>Cancel</button>
-  <button mat-raised-button color="primary" button [mat-dialog-close]="true" >Book</button>
+  <button mat-raised-button color="primary" routerLink="/bookPage" button [mat-dialog-close]="true">Book</button>
 </mat-dialog-actions>

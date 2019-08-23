@@ -33,3 +33,13 @@
 .carousel-item{
 
 }
+agm-map{
+  height: 400px;
+}
+.listgrid{
+  text-align: left;
+}
+.mat-grid-tile .mat-figure {
+  justify-content: flex-start !important ;
+  align-items: flex-start !important;
+}

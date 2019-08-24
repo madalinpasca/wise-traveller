@@ -61,3 +61,6 @@
 .discardbutton{
   margin-left: 20px;
 }
+agm-map{
+  height: 500px;
+}

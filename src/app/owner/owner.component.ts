@@ -10,6 +10,9 @@ import {findLast} from '@angular/compiler/src/directive_resolver';
   styleUrls: ['./owner.component.css']
 })
 export class OwnerComponent {
+  latitude = 35.54210396415144;
+  longitude = -6.627968216632894;
+  locationChosen = false;
   step = 0;
   tabname: string;
   tabs = [];
@@ -60,5 +63,13 @@ export class OwnerComponent {
 
   prevStep() {
     this.step--;
+  }
+
+  onChoseLocation(event) {
+    console.log(event);
+    // this.latitude = event.coords.lat;
+    // this.longitude = event.coords.lng;
+    // this.locationChosen = true;
+
   }
 }

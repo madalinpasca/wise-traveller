@@ -33,6 +33,7 @@
 
             </table>
           </form>
+          <button mat-raised-button color="primary">Save</button>
 
         </mat-step>
         <mat-step label="Step 2">
@@ -47,6 +48,8 @@
             <span>Discard last picture</span>
             <mat-icon>delete_sweep</mat-icon>
           </button>
+          <mat-divider></mat-divider>
+          <button mat-raised-button class="discardbutton" color="primary">Save</button>
 
         </mat-step>
         <mat-step label="Step 3">
@@ -85,7 +88,8 @@
                     <td>
                       <mat-form-field>
                         <label>
-                          <input matInput placeholder="Number of this type of rooms" [(ngModel)]="numberofrooms" type="number" name="numberofrooms"
+                          <input matInput placeholder="Number of this type of rooms" [(ngModel)]="numberofrooms"
+                                 type="number" name="numberofrooms"
                                  required>
                         </label>
                       </mat-form-field>
@@ -95,7 +99,8 @@
                     <td>
                       <mat-form-field>
                         <label>
-                          <input matInput placeholder="Number of double bads" [(ngModel)]="numberofdublebads" type="number" name="numberofdoublebads"
+                          <input matInput placeholder="Number of double bads" [(ngModel)]="numberofdublebads"
+                                 type="number" name="numberofdoublebads"
                                  required>
                         </label>
                       </mat-form-field>
@@ -105,7 +110,8 @@
                     <td>
                       <mat-form-field>
                         <label>
-                          <input matInput placeholder="Number of single bads" [(ngModel)]="numberofsinglebads" type="number" name="numberofsinglebads"
+                          <input matInput placeholder="Number of single bads" [(ngModel)]="numberofsinglebads"
+                                 type="number" name="numberofsinglebads"
                                  required>
                         </label>
                       </mat-form-field>
@@ -138,7 +144,8 @@
                     <td>
                       <mat-form-field>
                         <label>
-                          <input matInput placeholder="Price per room" [(ngModel)]="roomprice" type="number" name="roomprice"
+                          <input matInput placeholder="Price per room" [(ngModel)]="roomprice" type="number"
+                                 name="roomprice"
                                  required>
                         </label>
                       </mat-form-field>
@@ -157,10 +164,32 @@
 
             </mat-tab>
           </mat-tab-group>
+          <button mat-raised-button color="primary">Save</button>
         </mat-step>
         <mat-step label="Step 4">
-
-
+          <div class="form-group">
+            <input placeholder="Input you're adress" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
+                   class="form-control" #search [formControl]="searchControl">
+          </div>
+          <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+            <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+          </agm-map>
+          <mat-form-field class="example-full-width">
+            <label>
+              <input matInput placeholder="Add you're bussines phone number" [(ngModel)]="phoneNumber"
+                     type="number" name="bussinesphonenumber"
+                     required>
+            </label>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <label>
+              <input matInput placeholder="Add you're bussines email" [(ngModel)]="email"
+                     type="email" name="bussinesemail"
+                     required>
+            </label>
+          </mat-form-field>
+          <mat-divider></mat-divider>
+          <button mat-raised-button color="primary">Save</button>
         </mat-step>
       </mat-horizontal-stepper>
 

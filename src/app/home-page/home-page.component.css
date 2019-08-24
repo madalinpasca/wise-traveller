@@ -29,7 +29,7 @@
   width: 97.5%;
 }
 .mat-grid-tile {
-  background: #1175A3;
+  background-image: #1175A3;
 }
 
 .example-full-width{
@@ -40,7 +40,6 @@
 }
 .expand{
   width: 100% !important;
-  height: 100% !important;
   position: initial;
   width: 100px;
 

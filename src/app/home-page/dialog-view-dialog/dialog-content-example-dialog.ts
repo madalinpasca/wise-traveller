@@ -7,6 +7,7 @@ import {Component} from '@angular/core';
 
 })
 export class DialogContentExampleDialogComponent {
+  step = 0;
   latitude = 46.7598893;
   longitude = 23.534809;
   locationChosen = false;
@@ -16,7 +17,6 @@ export class DialogContentExampleDialogComponent {
 
   // items: Array<any> = [];
   images = ['../assets/ex1.jpg', '../assets/ex2.jpg', '../assets/ex3.jpg'];
-
   constructor() {
     // const images = ['../assets/ex1.jpg', '../assets/ex2.jpg', '../assets/ex3.jpg', '../assets/ex4.jpg'];
     // images.forEach((image, index) => {
@@ -36,6 +36,17 @@ export class DialogContentExampleDialogComponent {
   this.longitude = event.coords.lng;
   this.locationChosen = true;
 
+  }
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
   }
 }
 

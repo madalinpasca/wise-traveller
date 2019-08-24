@@ -11,20 +11,25 @@ import {findLast} from '@angular/compiler/src/directive_resolver';
 })
 export class OwnerComponent {
   step = 0;
-  tabs = ['First', 'Second', 'Third'];
+  tabname: string;
+  tabs = [];
   selected = new FormControl(0);
   urls = new Array<string>();
-  public deleted = this.urls.length;
+  facilities = new FormControl();
+  facilitiList: string[] = ['TV', 'Balcony', 'Bathroom in the room',
+    'Common bathroom', 'Room service', 'Refrigerator', 'Mini-bar'];
+  forbidens = new FormControl();
+  forbidenList: string[] = ['Smoking', 'Pets', 'Alcohol', 'Drugs',
+    'Guns', 'Sport equipment', 'Boots with mud', 'Noise'];
     addTab(selectAfterAdding: boolean) {
-    this.tabs.push('New');
-
+    this.tabs.push(this.tabname);
     if (selectAfterAdding) {
       this.selected.setValue(this.tabs.length - 1);
     }
   }
 
   removeTab(index: number) {
-    this.tabs.splice(index, 1);
+    this.tabs.splice(this.tabs.length - 1, 1);
   }
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {

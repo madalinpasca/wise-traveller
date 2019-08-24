@@ -42,7 +42,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatTabsModule,
     MatStepperModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule
   ],
   exports: [
     CommonModule,

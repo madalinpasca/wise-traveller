@@ -63,202 +63,37 @@
   <mat-divider></mat-divider>
 
   <mat-divider></mat-divider>
+
   <mat-accordion class="example-headers-align">
     <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon>local_florist</mat-icon>
+          3 rooms
         </mat-panel-title>
         <mat-panel-description>
-          Outdoor facilities
+          1 double bad & 2 singles
         </mat-panel-description>
       </mat-expansion-panel-header>
 
-      <mat-grid-list cols="3" rowHeight="3:1">
-        <mat-grid-tile>
-          <h2>
-            <mat-icon>local_florist</mat-icon>
-          </h2>
-          <mat-list class="listgrid" role="list">
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              BBQ facilities
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Terrace
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Garden
-            </mat-list-item>
-          </mat-list>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <h2>
-            <mat-icon>restaurant</mat-icon>
-          </h2>
-          <mat-list class="listgrid" role="list">
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Breakfast
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Lunch
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Dinner
-            </mat-list-item>
-          </mat-list>
-        </mat-grid-tile>
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1"><mat-icon>not_interested</mat-icon></mat-radio-button>
+        <mat-radio-button value="2"><mat-icon>done</mat-icon></mat-radio-button>
+      </mat-radio-group>
 
-        <mat-grid-tile>
-          <h2>
-            <mat-icon>room_service</mat-icon>
-          </h2>
-
-          <mat-list class="listgrid" role="list">
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Shuttle service
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              24-hour front desk
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Packed lunches
-            </mat-list-item>
-          </mat-list>
-        </mat-grid-tile>
-
-
-        <mat-grid-tile>
-          <h2>
-            <mat-icon>kitchen</mat-icon>
-          </h2>
-          <mat-list class="listgrid" role="list">
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Open kitchen
-            </mat-list-item>
-          </mat-list>
-        </mat-grid-tile>
-
-
-        <mat-grid-tile>
-          <h2>
-            <mat-icon>wifi</mat-icon>
-          </h2>
-          <mat-list class="listgrid" role="list">
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Free internet
-            </mat-list-item>
-          </mat-list>
-        </mat-grid-tile>
-
-
-        <mat-grid-tile>
-          <h2>
-            <mat-icon>pets</mat-icon>
-          </h2>
-          <mat-list class="listgrid" role="list">
-            <mat-list-item role="listitem">
-              <mat-icon>not_interested</mat-icon>
-              Not pet friendly
-            </mat-list-item>
-          </mat-list>
-        </mat-grid-tile>
-
-
-        <mat-grid-tile>
-          <h2>
-            <mat-icon>local_parking</mat-icon>
-          </h2>
-          <mat-list class="listgrid" role="list">
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Free parking
-            </mat-list-item>
-          </mat-list>
-        </mat-grid-tile>
-
-
-        <mat-grid-tile>
-          <h2>
-            <mat-icon>info</mat-icon>
-          </h2>
-          <mat-list class="listgrid" role="list">
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Smokers areea
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Rooms for families
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-icon>not_interested</mat-icon>
-              Non-smoker rooms
-            </mat-list-item>
-          </mat-list>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-          <h2>
-            <mat-icon>golf_course</mat-icon>
-          </h2>
-          <mat-list class="listgrid" role="list">
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Hiking
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Ping-pong
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Playground
-            </mat-list-item>
-          </mat-list>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <h2>
-            <mat-icon>message</mat-icon>
-          </h2>
-          <mat-list class="listgrid" role="list">
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              English
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              French
-            </mat-list-item>
-            <mat-list-item role="listitem">
-              <mat-icon>done</mat-icon>
-              Romanian
-            </mat-list-item>
-          </mat-list>
-        </mat-grid-tile>
-
-
-      </mat-grid-list>
+      <mat-form-field class="discardbutton">
+        <input matInput type="text" min="1" placeholder="facilitie/what is not allowed">
+      </mat-form-field>
 
       <mat-action-row>
+        <p style="color: green">Available 2</p> <p>/3</p>
         <button mat-button color="primary" (click)="nextStep()">Next</button>
       </mat-action-row>
     </mat-expansion-panel>
 
 
-
-
   </mat-accordion>
+
+
   <mat-divider></mat-divider>
   <h2>Location of {{locationname}}</h2>
   <script async defer

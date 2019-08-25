@@ -1,0 +1,59 @@
+<mat-card class="login-card">
+  <mat-card-header class="login-header">
+    <mat-card-title>You're bookings</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="dividers">
+    <table class="example-full-width">
+      <table mat-table
+             [dataSource]="dataSource" multiTemplateDataRows
+             class="mat-elevation-z8">
+        <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+          <th mat-header-cell *matHeaderCellDef> {{column}}</th>
+          <td mat-cell *matCellDef="let element"> {{element[column]}}</td>
+        </ng-container>
+
+        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+        <ng-container matColumnDef="expandedDetail">
+          <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+            <div class="example-element-detail"
+                 [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+              <img src="../assets/ex3.jpg" width="10%" height="10%">
+
+              <div class="example-element-description">
+                <mat-list class="roomslist">
+                  <mat-list-item> {{element.roomnumbers}} X {{element.roomtype}}</mat-list-item>
+                  <mat-list-item> {{element.roomnumbers}} X {{element.roomtype}}</mat-list-item>
+                  <mat-list-item> {{element.roomnumbers}} X {{element.roomtype}}</mat-list-item>
+                </mat-list>
+              </div>
+              <div class="example-element-description">
+                <mat-list class="foodlist">
+                  <mat-list-item> Breakfast X {{element.personsB}} persons</mat-list-item>
+                  <mat-list-item> Lunch X {{element.personsL}} persons</mat-list-item>
+                  <mat-list-item> Dinner X {{element.personsD}} persons</mat-list-item>
+                </mat-list>
+              </div>
+              <div [style.color]="element.colored" class="example-element-description">
+                {{element.BookingRequestStatus}}
+              </div>
+              <div class="example-element-description">
+                <mat-list class="totalprice">
+                  <mat-list-item><h2> Total price {{element.totalprice}}</h2></mat-list-item>
+                </mat-list>
+              </div>
+
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+            class="example-element-row"
+            [class.example-expanded-row]="expandedElement === element"
+            (click)="expandedElement = expandedElement === element ? null : element">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+      </table>
+    </table>
+  </mat-card-content>
+</mat-card>

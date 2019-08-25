@@ -51,12 +51,19 @@ export class HomePageComponent implements OnInit {
     ceva.data = 'Ana are mere';
     const dialogRef = this.dialog.open(DialogContentExampleDialogComponent);
     dialogRef.componentInstance.locationname = 'Hotel Wise';
+    dialogRef.componentInstance.roomstype = 'Imperial';
     dialogRef.componentInstance.aboutlocation = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, ' +
       'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ' +
       'exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in ' +
       'voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui ' +
       'officia deserunt mollit anim id est laborum';
-
+    dialogRef.componentInstance.doublebads = 1;
+    dialogRef.componentInstance.singlebads = 2;
+    dialogRef.componentInstance.freerooms = 5;
+    dialogRef.componentInstance.roomsnumber = 12;
+    dialogRef.componentInstance.breakfastprice = 15;
+    dialogRef.componentInstance.lunchprice = 35;
+    dialogRef.componentInstance.dinnerprice = 20;
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

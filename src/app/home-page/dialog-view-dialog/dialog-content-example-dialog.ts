@@ -13,6 +13,15 @@ export class DialogContentExampleDialogComponent {
   locationChosen = false;
   public locationname: string;
   public aboutlocation: string;
+  public roomstype: string;
+  public doublebads: number;
+  public singlebads: number;
+  public roomprice: number;
+  public freerooms: number;
+  public roomsnumber: number;
+  public breakfastprice: number;
+  public lunchprice: number;
+  public dinnerprice: number;
   // images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 
   // items: Array<any> = [];

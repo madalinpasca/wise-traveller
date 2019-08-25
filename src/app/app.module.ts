@@ -27,6 +27,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AgmCoreModule } from '@agm/core';
 import { BookPageComponent } from './book-page/book-page.component';
 import { OwnerComponent } from './owner/owner.component';
+import { BarRatingModule } from 'ngx-bar-rating';
+import { OwnerBookingsComponent } from './owner-bookings/owner-bookings.component';
+import { UserBookingsComponent } from './user-bookings/user-bookings.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +42,8 @@ import { OwnerComponent } from './owner/owner.component';
     DialogContentExampleDialogComponent,
     BookPageComponent,
     OwnerComponent,
+    OwnerBookingsComponent,
+    UserBookingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +60,7 @@ import { OwnerComponent } from './owner/owner.component';
     MatIconModule,
     MatListModule,
     MatDatepickerModule,
+    BarRatingModule,
     // Ng2CarouselamosModule,
     NgbModule,
     AgmCoreModule.forRoot({

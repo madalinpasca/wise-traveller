@@ -7,6 +7,7 @@ import {PhoneNumberComponent} from '../user/phone-number/phone-number.component'
 import {HomePageComponent} from '../home-page/home-page.component';
 import {BookPageComponent} from '../book-page/book-page.component';
 import {OwnerComponent} from '../owner/owner.component';
+import {UserBookingsComponent} from '../user-bookings/user-bookings.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'homePage', component: HomePageComponent},
   {path: 'bookPage', component: BookPageComponent},
   {path: 'ownerPage', component: OwnerComponent},
+  {path: 'userBookTable', component: UserBookingsComponent },
 ];
 
 @NgModule({

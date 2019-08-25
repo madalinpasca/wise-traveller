@@ -62,31 +62,131 @@
   <p>{{aboutlocation}}</p>
   <mat-divider></mat-divider>
 
+  <mat-grid-list cols="1" rowHeight="5:1">
+    <mat-grid-tile>
+      <mat-list>
+        <mat-list-item>
+          <h2 style="color: gold">
+            <mat-icon>restaurant</mat-icon>
+            Food services
+          </h2>
+        </mat-list-item>
+        <mat-list-item>Breakfast {{breakfastprice}} ron/person</mat-list-item>
+        <mat-list-item>Lunch {{lunchprice}} ron/person</mat-list-item>
+        <mat-list-item>Dinner {{dinnerprice}} ron/person</mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+  </mat-grid-list>
   <mat-divider></mat-divider>
 
   <mat-accordion class="example-headers-align">
     <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          3 rooms
+          {{roomsnumber}} rooms
         </mat-panel-title>
         <mat-panel-description>
-          1 double bad & 2 singles
+          {{roomstype}} rooms
         </mat-panel-description>
       </mat-expansion-panel-header>
 
-      <mat-radio-group aria-label="Select an option">
-        <mat-radio-button value="1"><mat-icon>not_interested</mat-icon></mat-radio-button>
-        <mat-radio-button value="2"><mat-icon>done</mat-icon></mat-radio-button>
-      </mat-radio-group>
-
-      <mat-form-field class="discardbutton">
-        <input matInput type="text" min="1" placeholder="facilitie/what is not allowed">
-      </mat-form-field>
-
+      <mat-grid-list cols="3" rowHeight="1:1">
+        <mat-grid-tile class="roomtypetiles">
+          <table>
+            <tr>
+              <td>
+                <h2 style="color: gold"> {{doublebads}}</h2>
+              </td>
+              <td>
+                double bads
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2 style="color: gold"> {{singlebads}}</h2>
+              </td>
+              <td>
+                single bads
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2 style="color: chartreuse"> {{freerooms}} </h2>
+              </td>
+              <td>
+                available rooms
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2 style="color: #212121">{{roomprice}}</h2>
+              </td>
+              <td>
+                Lei/room
+              </td>
+            </tr>
+          </table>
+        </mat-grid-tile>
+        <mat-grid-tile class="roomtypetiles">
+          <table>
+            <tr>
+              <td>
+                <h2 style="color: chartreuse">
+                  <mat-icon>done</mat-icon>
+                  Facilities
+                </h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../assets/icon4.png">
+              </td>
+              <td>
+                Bathroom
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../assets/icon4.png">
+              </td>
+              <td>
+                Bathroom
+              </td>
+            </tr>
+          </table>
+        </mat-grid-tile>
+        <mat-grid-tile class="roomtypetiles">
+          <table>
+            <tr>
+              <td>
+                <h2 style="color: crimson">
+                  <mat-icon>not_interested</mat-icon>
+                  Forbidden
+                </h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../assets/icon3.png">
+              </td>
+              <td>
+                Smoking
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../assets/icon3.png">
+              </td>
+              <td>
+                Smoking
+              </td>
+            </tr>
+          </table>
+        </mat-grid-tile>
+      </mat-grid-list>
       <mat-action-row>
-        <p style="color: green">Available 2</p> <p>/3</p>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
+
+        <button mat-button color="primary" (click)="nextStep()">Next type of rooms</button>
       </mat-action-row>
     </mat-expansion-panel>
 

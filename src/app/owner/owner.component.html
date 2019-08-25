@@ -166,6 +166,66 @@
           <button mat-raised-button color="primary">Save</button>
         </mat-step>
         <mat-step label="Step 4">
+          <form class="example-form">
+            <table class="step1">
+              <tr>
+                <td>
+                  <label class="foodcheckbox">
+                    <mat-checkbox
+                      class="example-margin"
+                      [(ngModel)]="checked">
+                      Breakfast
+                    </mat-checkbox>
+                  </label>
+
+                  <mat-form-field>
+                    <label>
+                      <input matInput placeholder="Price breakfast per person" [(ngModel)]="breakfast" type="number"
+                             name="breakfast"
+                             required>
+                    </label>
+                  </mat-form-field>
+                </td>
+
+              <tr>
+                <td>
+                  <label class="foodcheckbox">
+                    <mat-checkbox
+                      class="example-margin"
+                      [(ngModel)]="checked">
+                      Lunch
+                    </mat-checkbox>
+                  </label>
+                  <mat-form-field>
+                    <label>
+                      <input matInput placeholder="Price lunch per person" [(ngModel)]="lunch" type="number"
+                             name="lunch"
+                             required>
+                    </label>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="foodcheckbox">
+                    <mat-checkbox
+                      class="example-margin"
+                      [(ngModel)]="checked">
+                      Dinner
+                    </mat-checkbox>
+                  </label>
+                  <mat-form-field>
+                    <label>
+                      <input matInput placeholder="Price dinner per person" [(ngModel)]="dinner" type="number"
+                             name="dinner"
+                             required>
+                    </label>
+                  </mat-form-field>
+                </td>
+            </table>
+          </form>
+        </mat-step>
+        <mat-step label="Step 5">
           <div class="form-group">
             <input placeholder="Input you're adress" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
                    class="form-control" #search [formControl]="searchControl">

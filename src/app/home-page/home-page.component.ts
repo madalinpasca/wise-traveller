@@ -21,9 +21,6 @@ export class HomePageComponent implements OnInit {
   images = ['../assets/ex1.jpg', '../assets/ex2.jpg', '../assets/ex3.jpg'];
 
   tiles = [
-    {image: this.images[0] , cols: 1, rows: 1, color: '#424242', },
-    {image: this.images[1] , cols: 1, rows: 1, color: '#424242', },
-    {image: this.images[2] , cols: 1, rows: 1, color: '#424242', },
     {image: this.images[1] , cols: 1, rows: 1, color: '#424242', },
     {image: this.images[0] , cols: 1, rows: 1, color: '#424242', },
     {image: this.images[2] , cols: 1, rows: 1, color: '#424242', }

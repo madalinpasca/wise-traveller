@@ -33,22 +33,25 @@
 
             </table>
           </form>
-          <button mat-raised-button color="primary">Save</button>
+          <button mat-raised-button color="primary"><mat-icon>save</mat-icon>Save</button>
 
         </mat-step>
         <mat-step label="Step 2">
           Upload some pictures
-          <img *ngFor='let url of urls' [src]="url" height="200"> <br/>
-          <input hidden type="file" multiple #multiuploader (change)="onSelectFile($event)">
-          <button mat-raised-button (click)="multiuploader.click()" color="primary">
-            <span>Add you're pictures  </span>
-            <mat-icon>exposure_plus_1</mat-icon>
-          </button>
-          <button mat-raised-button class="discardbutton" (click)="removePicture($event)" color="primary">
-            <span>Discard last picture</span>
-            <mat-icon>delete_sweep</mat-icon>
-          </button>
-          <button mat-raised-button class="discardbutton" color="primary">Save</button>
+          <form class="example-form">
+            <img *ngFor='let url of urls' [src]="url" height="200"> <br/>
+            <input hidden type="file" multiple #multiuploader (change)="onSelectFile($event)">
+            <button mat-raised-button (click)="multiuploader.click()" color="primary">
+              <span>Add you're pictures  </span>
+              <mat-icon>exposure_plus_1</mat-icon>
+            </button>
+            <button mat-raised-button class="discardbutton" (click)="removePicture($event)" color="primary">
+              <span>Discard last picture</span>
+              <mat-icon>delete_sweep</mat-icon>
+            </button>
+          </form>
+          <button mat-raised-button color="primary"><mat-icon>save</mat-icon>Save</button>
+
 
         </mat-step>
         <mat-step label="Step 3">
@@ -163,14 +166,15 @@
 
             </mat-tab>
           </mat-tab-group>
-          <button mat-raised-button color="primary">Save</button>
+          <button class="save-button" mat-raised-button color="primary"><mat-icon>save</mat-icon>Save</button>
         </mat-step>
         <mat-step label="Step 4">
+          <h2>Add you're food services!!!</h2>
           <form class="example-form">
             <table class="step1">
               <tr>
                 <td>
-                  <label class="foodcheckbox">
+                  <label>
                     <mat-checkbox
                       class="example-margin"
                       [(ngModel)]="checked">
@@ -222,33 +226,75 @@
                     </label>
                   </mat-form-field>
                 </td>
+              </tr>
             </table>
           </form>
+          <button mat-raised-button color="primary"><mat-icon>save</mat-icon>Save</button>
+
+
         </mat-step>
         <mat-step label="Step 5">
+          <h2>Add you're contact & location!!!</h2>
+
+          <form class="example-form">
+            <table class="step1">
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <label>
+                      <input matInput placeholder="Contact person first name " [(ngModel)]="name"
+                             type="text" name="name"
+                             required>
+                    </label>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <label>
+                      <input matInput placeholder="Contact person last name" [(ngModel)]="lastname"
+                             type="text" name="lastname"
+                             required>
+                    </label>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <label>
+                      <input matInput placeholder="Add you're bussines phone number" [(ngModel)]="phoneNumber"
+                             type="number" name="bussinesphonenumber"
+                             required>
+                    </label>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <label>
+                      <input matInput placeholder="Add you're bussines email" [(ngModel)]="email"
+                             type="email" name="bussinesemail"
+                             required>
+                    </label>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+          </form>
+
+          <mat-divider></mat-divider>
           <div class="form-group">
-            <input placeholder="Input you're adress" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
+            <input placeholder="Input you're adress" autocorrect="off" autocapitalize="off" spellcheck="off"
+                   type="text"
                    class="form-control" #search [formControl]="searchControl">
           </div>
           <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
             <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
           </agm-map>
-          <mat-form-field class="example-full-width">
-            <label>
-              <input matInput placeholder="Add you're bussines phone number" [(ngModel)]="phoneNumber"
-                     type="number" name="bussinesphonenumber"
-                     required>
-            </label>
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <label>
-              <input matInput placeholder="Add you're bussines email" [(ngModel)]="email"
-                     type="email" name="bussinesemail"
-                     required>
-            </label>
-          </mat-form-field>
-          <mat-divider></mat-divider>
-          <button mat-raised-button color="primary">Save</button>
+          <button class="save-button" mat-raised-button color="primary"><mat-icon>save</mat-icon>Save</button>
         </mat-step>
       </mat-horizontal-stepper>
 

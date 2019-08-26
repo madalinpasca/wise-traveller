@@ -7,7 +7,8 @@ tr.example-detail-row {
 }
 
 tr.example-element-row:not(.example-expanded-row):hover {
-  background: #777;
+  background-color: #777;
+  opacity: 1.0 !important;
 }
 
 tr.example-element-row:not(.example-expanded-row):active {
@@ -38,7 +39,6 @@ tr.example-element-row:not(.example-expanded-row):active {
 }
 
 .example-element-description {
-  margin-left: 5%;
   padding: 16px;
 }
 
@@ -50,6 +50,9 @@ tr.example-element-row:not(.example-expanded-row):active {
 }
 .foodlist{
   background-color: gold;
+}
+.statuslist{
+  background-color: #1DE9B6;
 }
 
 
@@ -140,4 +143,23 @@ agm-map{
 }
 .save-button{
   margin-top: 10px;
+}
+
+
+
+
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  color: #d3d3d3;
+}
+.full {
+  color: gold;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: gold;
 }

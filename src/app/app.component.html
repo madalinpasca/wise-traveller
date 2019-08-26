@@ -7,6 +7,9 @@
     <span class="example-fill-remaining-space"></span>
     <span class="align-center"></span>
     <span class="example-spacer"></span>
+    <button mat-raised-button class="bookinglistbutton" color="primary" *ngIf="user != null" routerLink="/userBookTable">
+      <mat-icon>menu_book</mat-icon> You're booking list
+    </button>
     <div class="container-center" *ngIf="user != null" [matMenuTriggerFor]="menuUser">
       <img [src]="profileImg" [width]="profileWidth" [height]="profileHeight" alt="Profile picture"/>
     </div>

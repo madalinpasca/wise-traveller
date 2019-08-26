@@ -42,7 +42,9 @@
               </div>
               <div [style.color]="element.colored" class="example-element-description">
                 <mat-list class="statuslist">
-                  <mat-list-item *ngIf="element.BookingRequestStatus === 'waiting' "> {{element.requestdate}}
+                  <mat-list-item *ngIf="element.BookingRequestStatus === 'waiting' "> <h4>You requested this book in:</h4></mat-list-item>
+                  <mat-list-item *ngIf="element.BookingRequestStatus === 'waiting' "> <mat-divider></mat-divider></mat-list-item>
+                    <mat-list-item *ngIf="element.BookingRequestStatus === 'waiting' "> {{element.requestdate}}
                   </mat-list-item>
                   <mat-list-item *ngIf="element.BookingRequestStatus === 'aproved' "><h4>Contact:</h4></mat-list-item>
                   <mat-list-item>

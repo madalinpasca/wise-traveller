@@ -45,3 +45,23 @@
 
 }
 
+.star {
+  margin-top: -10px;
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  color: #d3d3d3;
+}
+.current-rate{
+  margin-top: -15px;
+}
+.full {
+  color: gold;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: gold;
+}
+

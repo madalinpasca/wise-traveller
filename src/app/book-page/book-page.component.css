@@ -42,7 +42,37 @@
   width: 100% !important;
   height: 100% !important;
   position: initial;
-  width: 100px;
 
 }
+.step1{
+  width: 100%;
+  background: #1175A3;;
+}
+.descriptionarea{
+  width: 600px;
+  height: 300px;
+}
 
+.example-input-label,
+.example-add-tab-button,
+.example-delete-tab-button {
+  margin: 8px;
+}
+.discardbutton{
+  margin-left: 20px;
+}
+agm-map{
+  height: 500px;
+}
+.foodcheckbox{
+  margin-right: 10px;
+}
+.form-group{
+  margin-top: 10px;
+}
+.save-button{
+  margin-top: 10px;
+}
+.date-spacing{
+  margin-left: 20px;
+}

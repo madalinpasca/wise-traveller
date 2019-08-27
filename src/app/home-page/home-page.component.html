@@ -18,7 +18,7 @@
         <!--</div>-->
 
 
-        <mat-grid-list cols="5" rowHeight="1:0.9">
+        <mat-grid-list cols="5" rowHeight="1:1.65">
 
 
           <mat-grid-tile
@@ -26,9 +26,20 @@
             [colspan]="tile.cols"
             [rowspan]="tile.rows"
             [style.background]="tile.color">
-            <button mat-button class="expand" (click)="openDialog()"><img src="{{tile.image}}"
-                                                                          width="90%" height="90%"></button>
-
+            <button mat-button class="expand" (click)="openDialog()">
+              {{locationname}}
+              <mat-list>
+              </mat-list>
+              <img src="{{tile.image}}" width="90%" height="90%">
+              <mat-list>
+                  <ng-template #t let-fill="fill">
+                    <span class="star" [class.full]="fill === 100">
+    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+  </span></ng-template>
+                  <ngb-rating class="rate-text" [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+              </mat-list>
+              <p class="current-rate">Current rate: <b>{{currentRate}}</b></p>
+            </button>
           </mat-grid-tile>
         </mat-grid-list>
 

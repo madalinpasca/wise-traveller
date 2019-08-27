@@ -15,6 +15,8 @@ import {FormControl} from '@angular/forms';
 })
 
 export class HomePageComponent implements OnInit {
+  locationname= "Hotel Wise"
+  currentRate = 3.14;
   title: string;
   token: AuthToken;
   image: any;
@@ -50,7 +52,7 @@ export class HomePageComponent implements OnInit {
     const ceva = new MatDialogConfig<string>();
     ceva.data = 'Ana are mere';
     const dialogRef = this.dialog.open(DialogContentExampleDialogComponent);
-    dialogRef.componentInstance.locationname = 'Hotel Wise';
+    dialogRef.componentInstance.locationname = this.locationname;
     dialogRef.componentInstance.roomstype = 'Imperial';
     dialogRef.componentInstance.aboutlocation = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, ' +
       'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ' +

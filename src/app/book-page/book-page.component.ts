@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-book-page',
@@ -6,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-page.component.css']
 })
 export class BookPageComponent implements OnInit {
-
+  leavingdate = new FormControl(new Date());
+  arivingdate = new FormControl(new Date());
+  roomTypes = [
+    'Family',
+    'Kids',
+    'Couple'
+  ];
   constructor() { }
 
   ngOnInit() {

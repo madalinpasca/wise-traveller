@@ -1,0 +1,183 @@
+table {
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background-color: #777;
+  opacity: 1.0 !important;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  width: 50%;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+.roomslist{
+  background-color: #9c27b0;
+}
+.foodlist{
+  background-color: gold;
+}
+.statuslist{
+  background-color: #1DE9B6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.login-card{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  margin-top: 10vh;
+  background: #1175A3;
+}
+
+.login-header{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  padding-top: 10vh;
+}
+.example-form{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.dividers{
+  background: #424242;
+}
+.mat-card .mat-divider-horizontal {
+  position: absolute;
+  left: 0;
+  margin-left: 1.2%;
+  width: 97.5%;
+}
+.mat-grid-tile {
+  background: #1175A3;
+}
+
+.example-full-width{
+  width: 98%;
+  height: auto;
+  margin-left: 1%;
+  text-align: center;
+}
+.expand{
+  width: 100% !important;
+  height: 100% !important;
+  position: initial;
+
+}
+.step1{
+  width: 100%;
+  background: #1175A3;;
+}
+.descriptionarea{
+  width: 600px;
+  height: 300px;
+}
+
+.example-input-label,
+.example-add-tab-button,
+.example-delete-tab-button {
+  margin: 8px;
+}
+.discardbutton{
+  margin-left: 20px;
+}
+agm-map{
+  height: 500px;
+}
+.foodcheckbox{
+  margin-right: 10px;
+}
+.form-group{
+  margin-top: 10px;
+}
+.save-button{
+  margin-top: 10px;
+}
+th.mat-header-cell {
+  text-align: center;
+  font-size: 20px;
+}
+
+.bookinglistacceptbutton{
+  margin-left: 10px;
+  background-color: lime;
+  margin-right: 5px;
+}
+.bookinglistdeniebutton{
+  background-color: red;
+  margin-right: 5px;
+}
+
+.client-contact{
+  margin-top: 10%;
+}
+.client-picture{
+  margin-left: 23%;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  color: #d3d3d3;
+}
+.full {
+  color: gold;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: gold;
+}

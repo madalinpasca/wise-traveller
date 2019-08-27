@@ -8,6 +8,7 @@ import {HomePageComponent} from '../home-page/home-page.component';
 import {BookPageComponent} from '../book-page/book-page.component';
 import {OwnerComponent} from '../owner/owner.component';
 import {UserBookingsComponent} from '../user-bookings/user-bookings.component';
+import {OwnerBookingsComponent} from '../owner-bookings/owner-bookings.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'bookPage', component: BookPageComponent},
   {path: 'ownerPage', component: OwnerComponent},
   {path: 'userBookTable', component: UserBookingsComponent },
+  {path: 'ownerBookTable', component: OwnerBookingsComponent },
 ];
 
 @NgModule({

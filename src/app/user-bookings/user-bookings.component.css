@@ -144,7 +144,10 @@ agm-map{
 .save-button{
   margin-top: 10px;
 }
-
+th.mat-header-cell {
+  text-align: center;
+  font-size: 20px;
+}
 
 
 

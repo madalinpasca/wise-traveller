@@ -9,6 +9,7 @@ import {FormControl} from '@angular/forms';
 export class BookPageComponent implements OnInit {
   leavingdate = new FormControl(new Date());
   arivingdate = new FormControl(new Date());
+  selected = 'option2';
   roomTypes = [
     'Family',
     'Kids',

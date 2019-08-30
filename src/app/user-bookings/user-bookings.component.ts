@@ -119,7 +119,7 @@ const ELEMENT_DATA: BookingDetails[] = [
         {roomtype: 'Imperial', roomnumbers: 3, }],
       totalprice: 700,
       personsB: null,
-      personsL: 50,
+      personsL: null,
       personsD: null,
       ophone: 748523912,
       colored: 'red',
